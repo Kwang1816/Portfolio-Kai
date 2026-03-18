@@ -8,6 +8,11 @@ if (hamburger) {
     hamburger.addEventListener('click', () => {
         navLinks.classList.toggle('active');
         hamburger.classList.toggle('active');
+        if (navLinks.classList.contains('active')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
     });
 
     // Close menu when clicking on a link
@@ -15,6 +20,7 @@ if (hamburger) {
         link.addEventListener('click', () => {
             navLinks.classList.remove('active');
             hamburger.classList.remove('active');
+            document.body.style.overflow = '';
         });
     });
 }
@@ -129,14 +135,14 @@ const closeModal = document.querySelector('.close-modal');
 // Project data (you can expand this with your actual project details)
 const projectData = {
     1: {
-        title: 'Project Title 1',
-        category: 'Design',
-        description: 'This is a detailed description of Project 1. Explain the challenge you faced, your approach to solving it, the technologies or methods you used, and the final results. Include metrics or outcomes if applicable.',
-        role: 'Lead Designer',
-        year: '2024',
-        tools: 'Figma, Photoshop, Illustrator',
+        title: 'Salt & Pepper Shaker',
+        category: 'Homegood Design',
+        description: 'The design is inspired by the convex and concave nature of wet paper bags, creating a shape that embodies each other. The product is a set of salt and pepper shakers designed for dining situations. The interlocking forms reference the way a wet paper bag collapses and expands, giving each piece a complementary silhouette that feels complete as a pair.',
+        role: 'Industrial Designer',
+        year: '2023',
+        tools: 'Rhino 3D, Keyshot, Wood',
         link: '#',
-        image: 'assets/project-1.jpg',
+        image: 'assets/SP shake/Title Image.png',
         video: ''
     },
     2: {

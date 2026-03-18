@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Works - Kai Wang</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=3">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -40,8 +40,8 @@
         <div class="container">
             <div class="filter-buttons">
                 <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="homegoods">Homegoods</button>
                 <button class="filter-btn" data-filter="design">Design</button>
-                <button class="filter-btn" data-filter="development">Development</button>
                 <button class="filter-btn" data-filter="branding">Branding</button>
             </div>
         </div>
@@ -52,40 +52,40 @@
         <div class="container">
             <div class="works-grid">
                 <!-- Project 1 -->
-                <div class="work-item" data-category="design" id="project1">
+                <a href="project-sp-shake.html" class="work-item" data-category="homegoods" id="project1" style="display:block; text-decoration:none; color:inherit;">
                     <div class="work-image">
-                        <img src="assets/project-1.jpg" alt="Project 1" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <img src="assets/SP shake/Title Image.png" alt="Salt and Pepper Shaker">
                         <div class="placeholder-image" style="display:none;">
-                            <span>Project Image 1<br>1200 x 800px</span>
+                            <span>Salt & Pepper Shaker</span>
                         </div>
                         <div class="work-overlay">
-                            <button class="view-btn" onclick="openModal(1)">View Project</button>
+                            <span class="view-btn">View Project</span>
                         </div>
                     </div>
                     <div class="work-info">
-                        <h3>Project Title 1</h3>
-                        <p class="work-category">Design</p>
-                        <p>Brief description of the project and what it entails.</p>
+                        <h3>Salt & Pepper Shaker</h3>
+                        <p class="work-category">Homegood Design</p>
+                        <p>A set of salt and pepper shakers inspired by the convex and concave nature of wet paper bags.</p>
                     </div>
-                </div>
+                </a>
 
                 <!-- Project 2 -->
-                <div class="work-item" data-category="development" id="project2">
+                <a href="project-utensil-rack.html" class="work-item" data-category="homegoods" id="project2" style="display:block; text-decoration:none; color:inherit;">
                     <div class="work-image">
-                        <img src="assets/project-2.jpg" alt="Project 2" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <img src="assets/Utentil Rack/Mock  up.png" alt="Utensil Rack">
                         <div class="placeholder-image" style="display:none;">
-                            <span>Project Image 2<br>1200 x 800px</span>
+                            <span>Utensil Rack</span>
                         </div>
                         <div class="work-overlay">
-                            <button class="view-btn" onclick="openModal(2)">View Project</button>
+                            <span class="view-btn">View Project</span>
                         </div>
                     </div>
                     <div class="work-info">
-                        <h3>Project Title 2</h3>
-                        <p class="work-category">Development</p>
-                        <p>Brief description of the project and what it entails.</p>
+                        <h3>Utensil Rack</h3>
+                        <p class="work-category">Homegood Design</p>
+                        <p>A drying rack designed for college dorm utensils — functional, organized, space-efficient.</p>
                     </div>
-                </div>
+                </a>
 
                 <!-- Project 3 -->
                 <div class="work-item" data-category="branding" id="project3">

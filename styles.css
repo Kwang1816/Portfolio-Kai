@@ -115,6 +115,7 @@ img {
     flex-direction: column;
     cursor: pointer;
     gap: 5px;
+    z-index: 1001; /* Ensure hamburger is above the mobile menu */
 }
 
 .hamburger span {
@@ -122,6 +123,18 @@ img {
     height: 3px;
     background-color: var(--primary-color);
     transition: var(--transition);
+    transform-origin: left center;
+}
+
+/* Hamburger active state to turn into an X */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg);
 }
 
 /* ==================== 
@@ -824,14 +837,23 @@ img {
 @media (max-width: 768px) {
     .nav-links {
         position: fixed;
-        top: 80px;
+        top: 0;
         left: -100%;
+        height: 100vh;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
         background-color: var(--secondary-color);
         width: 100%;
         padding: 2rem;
         box-shadow: var(--shadow-lg);
         transition: var(--transition);
+        z-index: 1000;
+        gap: 3rem;
+    }
+    
+    .nav-links a {
+        font-size: 1.5rem;
     }
     
     .nav-links.active {
