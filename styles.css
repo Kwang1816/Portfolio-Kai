@@ -10,11 +10,11 @@
 :root {
     --primary-color: #000000;
     --secondary-color: #ffffff;
-    --accent-color: #E94E1B; /* Vivid Vermilion */
+    --accent-color: #FF6600; /* Vibrant Orange */
     --text-primary: #1a1a1a;
     --text-secondary: #666666;
-    --background: #FFFCFA; /* Subtle warm tint */
-    --background-alt: #FFF5F2; /* Soft vermilion tint */
+    --background: #FFF9F5; /* Subtle warm orange tint */
+    --background-alt: #FFF0E6; /* Soft orange tint */
     --border-color: #e5e7eb;
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
