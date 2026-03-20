@@ -142,7 +142,7 @@ const projectData = {
         year: '2023',
         tools: 'Rhino 3D, Keyshot, Wood',
         link: '#',
-        image: 'assets/SP shake/Title Image.png',
+        image: 'assets/SP shake/Rendered Final.png',
         video: ''
     },
     2: {
@@ -303,7 +303,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'assets/Hexblock/Final.JPG',
         'assets/Grafting Knife/User Journey (1).JPG',
         'assets/Utentil Rack/Final Perspective (1).JPG',
-        'assets/SP shake/Title Image.png',
+        'assets/SP shake/Rendered Final.png',
         'assets/Yonex Eclipsion Z3/Final Render (1).png',
         'assets/Le Creuset Tallow Jar/Final Render.png'
     ];
@@ -320,7 +320,7 @@ document.addEventListener('DOMContentLoaded', () => {
         img.className = 'floating-img';
         
         // Random properties
-        const size = Math.random() * 150 + 100; // Between 100px and 250px
+        const size = Math.random() * 250 + 200; // Between 200px and 450px
         const leftPos = Math.random() * 100; // 0% to 100%
         const duration = Math.random() * 20 + 20; // 20s to 40s
         const delay = Math.random() * -40; // Negative delay to start at random points
