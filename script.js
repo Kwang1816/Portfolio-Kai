@@ -289,3 +289,53 @@ window.addEventListener('load', () => {
         document.body.style.opacity = '1';
     }, 100);
 });
+
+// ==================== 
+// Floating Background Images
+// ==================== 
+document.addEventListener('DOMContentLoaded', () => {
+    const floatingBg = document.querySelector('.floating-bg');
+    if (!floatingBg) return;
+
+    const images = [
+        'assets/Cutting Board/Final (1).jpg',
+        'assets/Dining Chair/Final Render.png',
+        'assets/Hexblock/Final.JPG',
+        'assets/Grafting Knife/User Journey (1).JPG',
+        'assets/Utentil Rack/Final Perspective (1).JPG',
+        'assets/SP shake/Title Image.png',
+        'assets/Yonex Eclipsion Z3/Final Render (1).png',
+        'assets/Le Creuset Tallow Jar/Final Render.png'
+    ];
+
+    // Number of images to float simultaneously
+    const numImages = 8;
+
+    for (let i = 0; i < numImages; i++) {
+        const img = document.createElement('img');
+        
+        // Randomly select an image
+        const randomImg = images[Math.floor(Math.random() * images.length)];
+        img.src = randomImg;
+        img.className = 'floating-img';
+        
+        // Random properties
+        const size = Math.random() * 150 + 100; // Between 100px and 250px
+        const leftPos = Math.random() * 100; // 0% to 100%
+        const duration = Math.random() * 20 + 20; // 20s to 40s
+        const delay = Math.random() * -40; // Negative delay to start at random points
+        
+        img.style.width = `${size}px`;
+        img.style.height = `${size}px`;
+        img.style.left = `${leftPos}%`;
+        img.style.animationDuration = `${duration}s`;
+        img.style.animationDelay = `${delay}s`;
+        
+        // Randomly mirror some images for variety
+        if (Math.random() > 0.5) {
+            img.style.transform = 'scaleX(-1)';
+        }
+
+        floatingBg.appendChild(img);
+    }
+});
