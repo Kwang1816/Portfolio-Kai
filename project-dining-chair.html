@@ -189,13 +189,28 @@
         }
 
         @media (max-width: 768px) {
-            .project-hero-overlay h1 { font-size: 2.5rem; }
-            .img-grid-2, .img-grid-3 { grid-template-columns: 1fr 1fr; }
             .project-hero { height: 60vh; }
+            .project-hero-overlay h1 { font-size: 2.5rem; }
+            .project-body { padding: 3rem 1.25rem; }
+            .project-meta { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; padding: 2rem 0; margin-bottom: 3rem; }
+            .project-section { margin-bottom: 3.5rem; }
+            .project-section h2 { font-size: 1.4rem; }
+            .project-section p { font-size: 1rem; }
+            .img-grid-2, .img-grid-3 { grid-template-columns: 1fr 1fr; }
+            .next-project { flex-direction: column; gap: 2rem; text-align: center; }
+            .next-project > div:last-child { text-align: center; }
+            .next-project a { font-size: 1.2rem; }
         }
 
         @media (max-width: 480px) {
+            .project-hero { height: 50vh; }
+            .project-hero-overlay { padding: 2rem; }
+            .project-hero-overlay h1 { font-size: 2rem; }
+            .project-hero-overlay p { font-size: 1rem; }
+            .project-body { padding: 2rem 1rem; }
+            .project-meta { grid-template-columns: 1fr 1fr; gap: 1rem; padding: 1.5rem 0; margin-bottom: 2.5rem; }
             .img-grid-2, .img-grid-3 { grid-template-columns: 1fr; }
+            .next-project a { font-size: 1rem; }
         }
     </style>
 </head>
@@ -219,7 +234,7 @@
 
     <!-- Hero Image -->
     <div class="project-hero">
-        <img src="assets/Dining Chair/Final Render.png" alt="Dining Chair">
+        <img src="assets/Dining Chair/Final Render.png?v=2" alt="Dining Chair">
         <div class="project-hero-overlay">
             <h1>Dining Chair</h1>
             <p>Furniture Design · 2025</p>
@@ -259,12 +274,27 @@
         <!-- Process & Ideation -->
         <div class="project-section">
             <h2>Ideation & Process</h2>
-            <img src="assets/Dining Chair/Form Inspiration.JPG" alt="Form Inspiration" class="img-full">
-            <div class="img-grid-2">
-                <img src="assets/Dining Chair/Ideation Sketch (1).jpg" alt="Ideation Sketch 1">
-                <img src="assets/Dining Chair/Ideation Sketch (2).jpg" alt="Ideation Sketch 2">
+            
+            <div class="img-grid-3">
+                <img src="assets/Dining Chair/Brainstorm (1).png" alt="Brainstorm 1">
+                <img src="assets/Dining Chair/Brainstorm (2).png" alt="Brainstorm 2">
+                <img src="assets/Dining Chair/Brainstorm (3).png" alt="Brainstorm 3">
             </div>
+
+            <img src="assets/Dining Chair/Form Inspiration.JPG" alt="Form Inspiration" class="img-full">
+            
             <div class="img-grid-2">
+                <img src="assets/Dining Chair/Form Sketch (1).png" alt="Form Sketch 1">
+                <img src="assets/Dining Chair/Form Sketch (2).png" alt="Form Sketch 2">
+            </div>
+            
+            <div class="img-grid-3">
+                <img src="assets/Dining Chair/Final Ideation (1).png" alt="Final Ideation 1">
+                <img src="assets/Dining Chair/Final Ideation (3).png" alt="Final Ideation 3">
+                <img src="assets/Dining Chair/Final Ideation (4).png" alt="Final Ideation 4">
+            </div>
+
+            <div class="img-grid-2" style="margin-top: 2rem;">
                 <img src="assets/Dining Chair/Process (1).JPG" alt="Process 1">
                 <img src="assets/Dining Chair/Process (2).JPG" alt="Process 2">
             </div>
@@ -273,12 +303,8 @@
         <!-- Final Product -->
         <div class="project-section">
             <h2>Final Product</h2>
-            <img src="assets/Dining Chair/Final Render.png" alt="Dining Chair" class="img-full">
-
-            <div class="img-grid-2">
-                <img src="assets/Dining Chair/Final Render.png" alt="Dining Chair view 1">
-                <img src="assets/Dining Chair/Studio Render.png" alt="Dining Chair view 2">
-            </div>
+            <img src="assets/Dining Chair/Final Render.png?v=2" alt="Dining Chair Final Render" class="img-full">
+            <img src="assets/Dining Chair/Studio Render.png?v=2" alt="Dining Chair Studio Render" class="img-full">
         </div>
 
         <!-- Navigation between projects -->

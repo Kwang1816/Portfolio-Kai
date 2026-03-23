@@ -190,13 +190,28 @@
         }
 
         @media (max-width: 768px) {
-            .project-hero-overlay h1 { font-size: 2.5rem; }
-            .img-grid-2, .img-grid-3 { grid-template-columns: 1fr 1fr; }
             .placeholder-hero { height: 60vh; }
+            .project-hero-overlay h1 { font-size: 2.5rem; }
+            .project-body { padding: 3rem 1.25rem; }
+            .project-meta { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; padding: 2rem 0; margin-bottom: 3rem; }
+            .project-section { margin-bottom: 3.5rem; }
+            .project-section h2 { font-size: 1.4rem; }
+            .project-section p { font-size: 1rem; }
+            .img-grid-2, .img-grid-3 { grid-template-columns: 1fr 1fr; }
+            .next-project { flex-direction: column; gap: 2rem; text-align: center; }
+            .next-project > div:last-child { text-align: center; }
+            .next-project a { font-size: 1.2rem; }
         }
 
         @media (max-width: 480px) {
+            .placeholder-hero { height: 50vh; }
+            .project-hero-overlay { padding: 2rem; }
+            .project-hero-overlay h1 { font-size: 2rem; }
+            .project-hero-overlay p { font-size: 1rem; }
+            .project-body { padding: 2rem 1rem; }
+            .project-meta { grid-template-columns: 1fr 1fr; gap: 1rem; padding: 1.5rem 0; margin-bottom: 2.5rem; }
             .img-grid-2, .img-grid-3 { grid-template-columns: 1fr; }
+            .next-project a { font-size: 1rem; }
         }
     </style>
 </head>
