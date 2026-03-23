@@ -42,7 +42,7 @@ body {
 
 a {
     text-decoration: none;
-    color: inherit;
+    color: inherit;ks
     transition: var(--transition);
 }
 
@@ -1129,6 +1129,118 @@ img {
     .feedback-section {
         padding: 3rem 0;
     }
+}
+
+/* ==================== 
+   Other: Photo Album 
+   ==================== */
+.works-album {
+    padding-top: 1rem;
+}
+
+.album-intro {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.album-grid {
+    columns: 4;
+    column-gap: 0.75rem;
+}
+
+.album-item {
+    break-inside: avoid;
+    position: relative;
+    margin-bottom: 0.75rem;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: zoom-in;
+}
+
+.album-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.4s ease;
+    filter: brightness(1);
+}
+
+.album-item:hover img {
+    transform: scale(1.03);
+    filter: brightness(0.75);
+}
+
+.album-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0.6rem 0.75rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 0 0 8px 8px;
+}
+
+.album-item:hover .album-label {
+    opacity: 1;
+}
+
+/* Lightbox */
+.album-lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.92);
+    z-index: 3000;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    cursor: zoom-out;
+}
+
+.album-lightbox.open {
+    display: flex;
+}
+
+.album-lightbox img {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+.album-lightbox-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    color: white;
+    font-size: 2.5rem;
+    cursor: pointer;
+    line-height: 1;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.album-lightbox-close:hover {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .album-grid { columns: 3; }
+}
+
+@media (max-width: 480px) {
+    .album-grid { columns: 2; column-gap: 0.5rem; }
+    .album-item { margin-bottom: 0.5rem; }
 }
 
 /* ==================== 

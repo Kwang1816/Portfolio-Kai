@@ -96,35 +96,86 @@ document.addEventListener('DOMContentLoaded', () => {
 // ==================== 
 const filterButtons = document.querySelectorAll('.filter-btn');
 const workItems = document.querySelectorAll('.work-item');
+const worksGrid = document.querySelector('.works-grid');
+const worksAlbum = document.getElementById('works-album');
 
 if (filterButtons.length > 0) {
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
-            // Remove active class from all buttons
             filterButtons.forEach(btn => btn.classList.remove('active'));
-            // Add active class to clicked button
             button.classList.add('active');
-            
+
             const filterValue = button.getAttribute('data-filter');
-            
-            workItems.forEach(item => {
-                if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
-                    item.style.display = 'block';
-                    setTimeout(() => {
-                        item.style.opacity = '1';
-                        item.style.transform = 'translateY(0)';
-                    }, 10);
-                } else {
-                    item.style.opacity = '0';
-                    item.style.transform = 'translateY(30px)';
-                    setTimeout(() => {
-                        item.style.display = 'none';
-                    }, 300);
-                }
-            });
+
+            if (filterValue === 'other') {
+                // Show album, hide main grid
+                if (worksGrid) worksGrid.style.display = 'none';
+                if (worksAlbum) worksAlbum.style.display = 'block';
+            } else {
+                // Show main grid, hide album
+                if (worksAlbum) worksAlbum.style.display = 'none';
+                if (worksGrid) worksGrid.style.display = 'grid';
+
+                workItems.forEach(item => {
+                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                        item.style.display = 'block';
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'translateY(0)';
+                        }, 10);
+                    } else {
+                        item.style.opacity = '0';
+                        item.style.transform = 'translateY(30px)';
+                        setTimeout(() => {
+                            item.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            }
         });
     });
 }
+
+// ==================== 
+// Album Lightbox
+// ==================== 
+const albumLightbox = document.getElementById('albumLightbox');
+const albumLightboxImg = document.getElementById('albumLightboxImg');
+const albumLightboxClose = document.getElementById('albumLightboxClose');
+
+document.querySelectorAll('.album-item').forEach(item => {
+    item.addEventListener('click', () => {
+        const img = item.querySelector('img');
+        const label = item.querySelector('.album-label');
+        albumLightboxImg.src = img.src;
+        albumLightboxImg.alt = label ? label.textContent : '';
+        albumLightbox.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    });
+});
+
+if (albumLightboxClose) {
+    albumLightboxClose.addEventListener('click', () => {
+        albumLightbox.classList.remove('open');
+        document.body.style.overflow = '';
+    });
+}
+
+if (albumLightbox) {
+    albumLightbox.addEventListener('click', (e) => {
+        if (e.target === albumLightbox) {
+            albumLightbox.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+    });
+}
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && albumLightbox && albumLightbox.classList.contains('open')) {
+        albumLightbox.classList.remove('open');
+        document.body.style.overflow = '';
+    }
+});
 
 // ==================== 
 // Project Modal
